@@ -62,7 +62,7 @@ export function getUserProfile () {
           if (!code) {
             throw new Error('Username is null')
           }
-          username = entities.encode(code)
+          username = eval(code) // eslint-disable-line no-eval
         } catch (err) {
           username = '\\' + username
         }
